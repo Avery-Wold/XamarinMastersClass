@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AverysXamarinProject.Views.MyModalPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="This is the modal page" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+
+            <Entry x:Name="Name" Placeholder="Enter Your Name" Text="{Binding Name}"/>
+            <Entry x:Name="Age" Placeholder="Enter Your Age" Text="{Binding Age}" Keyboard="Numeric"/>
+            <StackLayout Padding="0,0,0,20" Orientation="Horizontal">
+                <Button Text="Submit" Clicked="Button_Clicked" HorizontalOptions="Start" WidthRequest="100"/>
+                <Button Text="Clear" Clicked="Button_Clicked_2" HorizontalOptions="EndAndExpand" WidthRequest="100"/>
+            </StackLayout>
+
+            <BoxView HeightRequest="2" BackgroundColor="Violet"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Name:" Padding="20" Grid.Row="0" Grid.Column="0"/>
+                <Label x:Name="NameLabel"  Text="{Binding Name}" Padding="20" Grid.Row="0" Grid.Column="1"/>
+                <Label Text="Age:" Padding="20" Grid.Row="1" Grid.Column="0"/>
+                <Label x:Name="AgeLabel"  Text="{Binding Age}" Padding="20" Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+            <BoxView HeightRequest="2" BackgroundColor="Violet"/>
+
+            <Button Text="Done" Clicked="Button_Clicked_1" VerticalOptions="EndAndExpand"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
